@@ -1,0 +1,176 @@
+% title "4EDC2013/Registro";
+% layout "carousel";
+
+<h1>Registro en línea de obras</h1>
+<p>
+Por favor regístrese en una ocasión por cada obra/evento
+que desea exponer en este festival.
+</p>
+
+<p>
+<em><small>Los campos opcionales están marcados con * (asterisco).</small></em>
+</p>
+
+%= form_for "/registro" => (role => "form",  class => "form-horizontal") => begin
+<h3>Sobre la obra</h3>
+
+<div class="form-group">
+  <label for="eventna" class="col-sm-2 col-md-2 control-label">*Título del evento</label>
+  <div class="col-sm-8 col-md-4">
+    %= text_field "eventna", class => "form-control"
+    <span class="help-block"> Debe mantener una longitud corta (&lt; 32
+	caracteres), se usará en publicidad exactamente como está
+    escrito.</span> 
+  </div>
+</div>
+
+<div class="form-group">
+  <label for="eventsubna" class="col-sm-2 col-md-2 control-label">*Subtítulo del evento</label>
+  <div class="col-sm-8 col-md-4">
+    %= text_field "eventna", class => "form-control"
+    <span class="help-block"> Debe mantener una longitud
+    relativamente corta (&lt; 32 caracteres), se usará en publicidad exactamente
+    como está escrito.</span> 
+  </div>
+</div>
+
+<div class="form-group">
+  <label for="eventdesc" class="col-sm-2 col-md-2 control-label">*Descripción</label>
+  <div class="col-sm-8 col-md-4">
+    %= text_area "eventdesc", class => "form-control"
+    <span class="help-block">Describa cómo se desarrolla el evento en tiempo y
+    forma, qué elementos intervienen, cuántas personas; sea detallado, ésta se
+    usa para verificar la viabilidad de inclusión de la obra y pertinencia.
+    Revise la sección inferior para describir requisitos técnicos específicos.
+  </div>
+</div>
+
+<div class="form-group">
+  <label for="eventarg" class="col-sm-2 col-md-2 control-label">*Justificación</label>
+  <div class="col-sm-8 col-md-4">
+    %= text_area "eventarg", class => "form-control"
+    <span class="help-block">Argumentación artística, explique el porqué y para
+    qué de la obra. Tome en cuenta que Vibración busca promover eventos
+    culturales entre un público de diversas edades y procedencias.
+    </span>
+  </div>
+</div>
+
+<div class="form-group">
+  <label for="discipline" class="col-sm-2 col-md-2 control-label">*Disciplina</label>
+  <div class="col-sm-8 col-md-4">
+    %= text_field "discipline", class => "form-control"
+    <span class="help-block"> Use la disciplina que más se aproxime a su obra. </span>
+  </div>
+</div>
+
+<h3> Sobre el artista </h3>
+<div class="form-group">
+  <label for="autorna" class="col-sm-2 col-md-2 control-label">*Artista</label>
+  <div class="col-sm-8 col-md-4">
+    %= text_field "autorna", class => "form-control"
+    <span class="help-block">Para procesar la solicitud de
+    inclusión en el 4EDC2013 requerimos una persona que sea la <em>encargada</em>
+    de mantener la comunicación con el Colectivo Vibración, aunque la obra en
+    cuestión sea propuesta por un colectivo o grupo, Vibración sólo tiene
+    recursos para mantener contacto con una persona por evento.
+    </span>
+  </div>
+</div>
+
+<div class="form-group">
+  <label for="autorcol" class="col-sm-2 col-md-2 control-label">Colectivo(s)</label>
+  <div class="col-sm-8 col-md-4">
+    %= text_field "autorcol", class => "form-control"
+    <span class="help-block"> Opcional. Nombre(s) del colectivo al que pertenece el
+    artista y que está proponiendo la obra, <strong>no incluir nombres de colectivos que
+    no estén involucrados con la obra en cuestión.</strong> </span>
+  </div>
+</div>
+
+<div class="form-group">
+  <label for="autormail" class="col-sm-2 col-md-2 control-label">*Correo electrónico</label>
+  <div class="col-sm-8 col-md-4">
+    %= text_field "autormail", class => "form-control"
+    <span class="help-block">Canal principal de comunicación, se usará para
+    informar de la aceptación de la obra, horarios disponibles, requisitos
+    técnicos, etc. Recibirá una confirmación de que su solicitud fue recibida
+    por éste.</span>
+  </div>
+</div>
+
+<div class="form-group">
+  <label for="autortel" class="col-sm-2 col-md-2 control-label">Teléfono</label>
+  <div class="col-sm-8 col-md-4">
+    %= text_field "autortel", class => "form-control"
+    <span class="help-block">Opcional, pero altamente recomendado. De
+    preferencia usar número de teléfono celular. Canal secundario de
+    comunicación, se usará sólo si la obra fue aceptada y sólo el día en que ésta
+    esté programada para revisión de pormenores o asuntos de emergencia.
+    </span>
+  </div>
+</div>
+
+<h3>Requisitos técnicos de la obra</h3>
+
+<div class="form-group">
+  <label for="eventdur" class="col-sm-2 col-md-2 control-label">*Duración</label>
+  <div class="col-sm-2 col-md-2">
+    %= time_field "eventdur", class => "form-control", value => "00:00"
+  </div> 
+</div>
+<div class="form-group">
+  <div class="col-sm-offset-2 col-md-offset-2 col-sm-8 col-md-4">
+    <span class="help-block">Frente al público. No podemos aceptar eventos con
+    duración mayor a 2 horas. </span>
+  </div>
+</div>
+
+<div class="form-group">
+  <label for="eventtm" class="col-sm-2 col-md-2 control-label">Horario sugerido</label>
+  <div class="col-sm-8 col-md-4">
+    %= time_field "eventtm", class => "form-control"
+    <span class="help-block">Opcional. En qué horario del día le gustaría que fuera
+    ubicada la obra</span>
+  </div>
+</div>
+
+<div class="form-group">
+  <label for="eventspace" class="col-sm-2 col-md-2 control-label">*Espacio</label>
+  <div class="col-sm-8 col-md-4">
+    %= text_area "eventspace", class => "form-control"
+    <span class="help-block">Requisitos espaciales, por ej. si requiere un espacio al
+    aire libre, o cerrado, escenario, dimensiones, piso especial, etc.
+    </span>
+  </div>
+</div>
+
+
+<div class="form-group">
+  <label for="eventpublic" class="col-sm-2 col-md-2 control-label">*Público</label>
+  <div class="col-sm-8 col-md-4">
+    %= text_area "eventpublic", class => "form-control"
+    <span class="help-block">Detalle si su obra está dirigida al público en
+    general o está dirigida a un público específico: infantil, adulto,
+    adolescente, etc; no interfiere con la aceptación o no de la obra, pero se
+    usa para prever el espacio donde se exhibirá.
+  </div>
+</div>
+
+<div class="form-group">
+  <label for="eventstaff" class="col-sm-2 col-md-2 control-label">*Apoyo de personal
+  técnico</label>
+  <div class="col-sm-8 col-md-4">
+    %= text_area "eventstaff", class => "form-control"
+    <span class="help-block">
+      Además del personal que se encarga del
+       sonido, especifique si necesita ayuda para
+       armar o montar los materiales que usted
+       llevará al evento, instrumentos,
+       escenografía, etc.
+    </span>
+  </div>
+</div>
+
+% end
+
