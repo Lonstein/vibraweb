@@ -36,4 +36,5 @@ helper sendmail => sub {
 get "/" => "index";
 get "/registro" => "registro";
 
+app->config(hypnotoad => {listen => ["http://*:3000/"], proxy => 1});
 app->start;
