@@ -44,11 +44,7 @@
 		  <!-- XXX: uses white colors in expanded mode -->
 		  <ul class="dropdown-menu">
 		    <li><a href="convocatoria">Convocatoria</a></li>
-		    <li><a href="#">a</a></li>
-		    <li><a href="#">b</a></li>
-		    <li><a href="#">c</a></li>
-		    <li><a href="#">d</a></li>
-		    <li><a href="#">e</a></li>
+		    <li><a href="registro">Registro</a></li>
 		  </ul>
 		</li>
                 <li><a href="#acerca">Acerca</a></li>
