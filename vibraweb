@@ -1,4 +1,37 @@
+#!/usr/bin/env perl
+
 use Mojolicious::Lite;
+
+use constant DEBUG => 0;
+
+my $vibramail = "default\@colectivovibracion.org";
+my @mail = qw(msmtp -a vibracion -t);
+DEBUG && push @mail, qw(-v); # log email transaction
+
+# receives an email as argument, sends it to recipients in its content, returns
+# false if everything is ok, returns error code otherwise.
+helper sendmail => sub {
+	my $self = shift;
+        my $content = shift;
+        my $mailfd;
+
+        DEBUG && warn "DEBUG: $content";
+        return 0 unless $content;
+        open $mailfd, "|-", @mail or $self->app->log->fatal("cannot run @mail: $!");
+
+        print $mailfd $content or $self->app->log->fatal("cannot print into mailfd: $!");
+        return 0 if close $mailfd;
+	if ($! == 0) { # exit() with non-zero status
+		$self->app->log->error("@mail returned non-zero status.");
+		return $? >> 8;
+	} elsif ($!) {
+		$self->app->log->warn("cannot close mailfd: $!");
+		return -1;
+	}
+
+        return 0;
+
+};
 
 get "/" => "index";
 get "/registro" => "registro";
