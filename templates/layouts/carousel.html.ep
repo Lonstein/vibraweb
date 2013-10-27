@@ -10,14 +10,12 @@
     <title><%= $title %></title>
 
     <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/css/dropdown-submenu.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="../../assets/js/html5shiv.js"></script>
-      <script src="../../assets/js/respond.min.js"></script>
-    <![endif]-->
+      <script src="/js/html5shiv.js"></script>
+      <!-- XXX: respond.min.js must not be cross domain -->
+      <script src="/js/respond.min.js"></script>
 
     <!-- Custom styles for this template -->
     <link href="css/carousel.css" rel="stylesheet">
@@ -46,7 +44,11 @@
 		  <!-- XXX: uses white colors in expanded mode -->
 		  <ul class="dropdown-menu">
 		    <li><a href="convocatoria">Convocatoria</a></li>
-		    <li><a href="registro">Registro</a></li>
+		    <li><a href="#">a</a></li>
+		    <li><a href="#">b</a></li>
+		    <li><a href="#">c</a></li>
+		    <li><a href="#">d</a></li>
+		    <li><a href="#">e</a></li>
 		  </ul>
 		</li>
                 <li><a href="#acerca">Acerca</a></li>
@@ -116,6 +118,9 @@
       <%= content %>
       <hr class="featurette-divider">
 
+    </div><!-- /.container -->
+
+    <div class="container footer">
       <!-- FOOTER -->
       <footer>
         <p class="pull-right"><a href="#">Back to top</a></p>
@@ -128,9 +133,8 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-    <script src="/js/dropdown-submenu.js"></script>
+    <script src="/js/jquery.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
     <script src="/js/holder.js"></script>
   </body>
 </html>
