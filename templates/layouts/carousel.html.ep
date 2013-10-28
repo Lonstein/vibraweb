@@ -34,21 +34,21 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="#"><img src="/img/colectivovibracion.png"></a>
+              <a class="navbar-brand" href="/"><img src="/img/colectivovibracion.png"></a>
             </div>
             <div class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Inicio</a></li>
+                <li><a href="/">Inicio</a></li>
                 <li class="dropdown"><a href="#" data-toggle="dropdown"
 		class="dropdown-toggle">4EDC2013<span class="caret"></span></a>
 		  <!-- XXX: uses white colors in expanded mode -->
 		  <ul class="dropdown-menu">
-		    <li><a href="convocatoria">Convocatoria</a></li>
-		    <li><a href="registro">Registro</a></li>
+		    <li><a href="/convocatoria">Convocatoria</a></li>
+		    <li><a href="/registro">Registro</a></li>
 		  </ul>
 		</li>
-                <li><a href="#acerca">Acerca</a></li>
-                <li><a href="#contacto">Contacto</a></li>
+                <li><a href="">Acerca</a></li>
+                <li><a href="">Contacto</a></li>
               </ul>
             </div>
           </div>
@@ -143,11 +143,11 @@
     </div><!-- /.container -->
 
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="/js/jquery.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
-    <script src="/js/holder.js"></script>
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="/js/jquery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/holder.js"></script>
   </body>
 </html>
