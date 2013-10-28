@@ -2,6 +2,7 @@
 % layout "carousel";
 % my $v = stash("valid") // {};
 % my $error = stash("error");
+% my $ispost = stash("ispost");
 
 <h1>Registro en línea de obras</h1>
 <p>
@@ -14,27 +15,32 @@ que desea exponer en este festival.
 </p>
 
 <div class="col-md-4 col-md-offset-2">
-% if (stash("ispost") and grep {not defined $_} values %$valid) { # input error
+% if ($ispost and grep {not defined $_} values %$v) { # input error
   <div class="alert alert-danger">
   <p class="lead text-center">Datos incorrectos</p>
   <p>Su solicitud no puede ser procesada porque ha introducido datos
   incorrectos, revise el formulario.
   </p>
   </div><!-- .alert-danger -->
-% } elsif (stash("ispost") and $error) {
+% } elsif ($ispost and $error) {
   <div class="alert alert-danger">
   <p class="lead text-center">Lo sentimos</p>
   <p>
   Por el momento su solicitud no puede ser almacenada, ha ocurrido un problema
   en nuestro servidor, favor de intentarlo más tarde y, si lo desea, reportarlo
-  a sys@colectivovibracion.org
+  a sys@colectivovibracion.org, si decide reportarlo, es muy útil que incluya
+  una impresión de la pantalla actual con su reporte.
+  </p>
+  <p>
+  Detalle: <%= $error %>
   </p>
   </div><!-- .alert-danger -->
-% } elsif (stash("ispost")) { # all ok
+% } elsif ($ispost) { # all ok
   <div class="alert alert-success">
   <p class="lead text-center">Gracias</p> <p>Su solicitud ha sido almacenada, en breve recibirá
-  una confirmación de su registro a la dirección de correo electrónico que
-  proporcionó</p>
+  una confirmación automática de su registro a la dirección de correo electrónico que
+  proporcionó, si no recibe tal confirmación por favor comuníquese a
+  sys@colectivovibracion.org</p>
   </div><!-- .alert-success -->
 % }
 </div><!-- .col-md-4  -->
@@ -44,7 +50,7 @@ que desea exponer en este festival.
 <fieldset>
 <legend>Sobre la obra</legend>
 
-<div class="form-group <%== ! defined($v->{eventna}) ? qq!has-error! : qq!! %>">
+<div class="form-group <%== $ispost && ! defined($v->{eventna}) ? qq!has-error! : qq!! %>">
   <label for="eventna" class="col-md-3 control-label">*Título del evento</label>
   <div class="col-md-9">
     %= text_field "eventna", class => "form-control", size => 32, maxlength => 32
@@ -54,7 +60,7 @@ que desea exponer en este festival.
   </div>
 </div>
 
-<div class="form-group <%== ! defined($v->{eventsubna}) ? qq!has-error! : qq!! %>">
+<div class="form-group <%== $ispost && ! defined($v->{eventsubna}) ? qq!has-error! : qq!! %>">
   <label for="eventsubna" class="col-md-3 control-label">*Subtítulo del evento</label>
   <div class="col-md-9">
     %= text_field "eventsubna", class => "form-control", size => 32, maxlength => 32
@@ -64,7 +70,7 @@ que desea exponer en este festival.
   </div>
 </div>
 
-<div class="form-group <%== ! defined($v->{eventdesc}) ? qq!has-error! : qq!! %>">
+<div class="form-group <%== $ispost && ! defined($v->{eventdesc}) ? qq!has-error! : qq!! %>">
   <label for="eventdesc" class="col-md-3 control-label">*Descripción</label>
   <div class="col-md-9">
     %= text_area "eventdesc", class => "form-control", rows => 4
@@ -76,7 +82,7 @@ que desea exponer en este festival.
   </div>
 </div>
 
-<div class="form-group <%== ! defined($v->{eventarg}) ? qq!has-error! : qq!! %>">
+<div class="form-group <%== $ispost && ! defined($v->{eventarg}) ? qq!has-error! : qq!! %>">
   <label for="eventarg" class="col-md-3 control-label">*Justificación</label>
   <div class="col-md-9">
     %= text_area "eventarg", class => "form-control", rows => 4
@@ -87,7 +93,7 @@ que desea exponer en este festival.
   </div>
 </div>
 
-<div class="form-group <%== ! defined($v->{discipline}) ? qq!has-error! : qq!! %>">
+<div class="form-group <%== $ispost && ! defined($v->{discipline}) ? qq!has-error! : qq!! %>">
   <label for="discipline" class="col-md-3 control-label">*Disciplina</label>
   <div class="col-md-9">
     %= text_field "discipline", class => "form-control"
@@ -99,7 +105,7 @@ que desea exponer en este festival.
 
 <fieldset>
 <legend> Sobre el artista </legend>
-<div class="form-group <%== ! defined($v->{autorna}) ? qq!has-error! : qq!! %>">
+<div class="form-group <%== $ispost && ! defined($v->{autorna}) ? qq!has-error! : qq!! %>">
   <label for="autorna" class="col-md-3 control-label">*Artista</label>
   <div class="col-md-9">
     %= text_field "autorna", class => "form-control"
@@ -112,7 +118,7 @@ que desea exponer en este festival.
   </div>
 </div>
 
-<div class="form-group <%== ! defined($v->{autorcol}) ? qq!has-error! : qq!! %>">
+<div class="form-group <%== $ispost && ! defined($v->{autorcol}) ? qq!has-error! : qq!! %>">
   <label for="autorcol" class="col-md-3 control-label">Colectivo(s)</label>
   <div class="col-md-9">
     %= text_field "autorcol", class => "form-control"
@@ -122,7 +128,7 @@ que desea exponer en este festival.
   </div>
 </div>
 
-<div class="form-group <%== ! defined($v->{autormail}) ? qq!has-error! : qq!! %>">
+<div class="form-group <%== $ispost && ! defined($v->{autormail}) ? qq!has-error! : qq!! %>">
   <label for="autormail" class="col-md-3 control-label">*Correo electrónico</label>
   <div class="col-md-9">
     %= text_field "autormail", class => "form-control"
@@ -133,7 +139,7 @@ que desea exponer en este festival.
   </div>
 </div>
 
-<div class="form-group <%== ! defined($v->{autortel}) ? qq!has-error! : qq!! %>">
+<div class="form-group <%== $ispost && ! defined($v->{autortel}) ? qq!has-error! : qq!! %>">
   <label for="autortel" class="col-md-3 control-label">Teléfono</label>
   <div class="col-md-9">
     %= tel_field "autortel", class => "form-control"
@@ -150,21 +156,21 @@ que desea exponer en este festival.
 <fieldset>
 <legend>Requisitos técnicos de la obra</legend>
 
-<div class="form-group <%== ! defined($v->{eventdur}) ? qq!has-error! : qq!! %>">
+<div class="form-group <%== $ispost && ! defined($v->{eventdur}) ? qq!has-error! : qq!! %>">
   <label for="eventdur" class="col-md-3 control-label">*Duración</label>
   <div class="col-md-3">
     %= time_field "eventdur", class => "form-control", value => "00:00"
   </div> 
 </div>
 
-<div class="form-group <%== ! defined($v->{eventdur}) ? qq!has-error! : qq!! %>">
+<div class="form-group <%== $ispost && ! defined($v->{eventdur}) ? qq!has-error! : qq!! %>">
   <div class="col-md-9 col-md-offset-3">
     <span class="help-block">Frente al público. No podemos aceptar eventos con
     duración mayor a 2 horas. Formato de 24 horas.</span>
   </div> 
 </div>
 
-<div class="form-group <%== ! defined($v->{eventtm}) ? qq!has-error! : qq!! %>">
+<div class="form-group <%== $ispost && ! defined($v->{eventtm}) ? qq!has-error! : qq!! %>">
   <label for="eventtm" class="col-md-3 control-label">Horario sugerido</label>
   <div class="col-md-9">
     %= time_field "eventtm", class => "form-control", value => "00:00"
@@ -173,7 +179,7 @@ que desea exponer en este festival.
   </div>
 </div>
 
-<div class="form-group <%== ! defined($v->{eventspace}) ? qq!has-error! : qq!! %>">
+<div class="form-group <%== $ispost && ! defined($v->{eventspace}) ? qq!has-error! : qq!! %>">
   <label for="eventspace" class="col-md-3 control-label">*Espacio</label>
   <div class="col-md-9">
     %= text_area "eventspace", class => "form-control", rows => 4
@@ -184,7 +190,7 @@ que desea exponer en este festival.
 </div>
 
 
-<div class="form-group <%== ! defined($v->{eventpublic}) ? qq!has-error! : qq!! %>">
+<div class="form-group <%== $ispost && ! defined($v->{eventpublic}) ? qq!has-error! : qq!! %>">
   <label for="eventpublic" class="col-md-3 control-label">*Público</label>
   <div class="col-md-9">
     %= text_area "eventpublic", class => "form-control", rows => 4
@@ -196,7 +202,7 @@ que desea exponer en este festival.
   </div>
 </div>
 
-<div class="form-group <%== ! defined($v->{eventstaff}) ? qq!has-error! : qq!! %>">
+<div class="form-group <%== $ispost && ! defined($v->{eventstaff}) ? qq!has-error! : qq!! %>">
   <label for="eventstaff" class="col-md-3 control-label">*Apoyo de personal
   técnico</label>
   <div class="col-md-9">
