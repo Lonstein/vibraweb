@@ -36,5 +36,57 @@ helper sendmail => sub {
 get "/" => "index";
 get "/registro" => "registro";
 
+# check form params, validate them, if ok generate an email body, send it
+# to the autor, then generate everything is ok page, otherwise: generate a page
+# showing bad params
+post "/registro" => sub {
+	my $self = shift;
+	my @param = $self->param;
+	my %valid;
+	my %invalid; # (invalid fieldname => "reason of invalidness")
+	my $mail;
+	my $error = "";
+
+	%valid = %invalid = map {($_, undef)} @param;
+	for (@param) {
+		my $val = $self->param($_);
+		if ($_ eq "eventdur") {
+			$valid{$_} = $val if
+			    $val =~ /^[0-9]{1,2}:[0-9]{1,2}$/;
+		} elsif ($_ eq "autorcol") {
+			$valid{$_} = $val if $val =~ /^$|^.*$/;
+		} elsif ($_ eq "autormail") {
+			$valid{$_} = $val if $val =~ /^[^@]+@[A-za-z0-9.-]+$/;
+		} elsif ($_ eq "autortel") {
+			$valid{$_} = $val if $val =~ /^$|^[0-9]+$/;
+		} elsif ($_ eq "eventtm") {
+			$valid{$_} = $val if
+			    $val eq "" or $val =~ /^[0-9]{1,2}:[0-9]{1,2}$/;
+		} elsif ($_ eq "eventna") {
+			$valid{$_} = $val if $val ne "" and length($val) < 32;
+		} elsif ($_ eq "eventsubna") {
+			$valid{$_} = $val if $val ne "" and length($val) < 32;
+		} else { # simple not emptyness evaluation for other fields
+			$valid{$_} = $val if $val ne "";
+		}
+	}
+	$self->app->log->debug("valid: ",
+	    join(", ", map {defined $valid{$_} ?  "$_: $valid{$_}" : "$_: undef"}  sort keys %valid));
+	$self->stash(valid => \%valid);
+	$self->stash(ispost => 1);
+	goto render if grep {not defined $_} values %valid; # any param error
+
+	$error .= "No se pudo generar el correo. ", goto render if
+	    not $mail = $self->render("registro/mail", format => 'txt', partial => 1);
+	$error .= "No se pudo enviar el correo. ", goto render if
+	    $self->sendmail($mail) != 0;
+
+
+	render:
+
+	$self->app->log->debug("error: $error");
+	return $self->render("registro", format => "html", error => $error);
+} => "registro";
+
 app->config(hypnotoad => {listen => ["http://*:3000/"], proxy => 1});
 app->start;
