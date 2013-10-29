@@ -39,16 +39,10 @@
             <div class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
                 <li><a href="/">Inicio</a></li>
-                <li class="dropdown"><a href="#" data-toggle="dropdown"
-		class="dropdown-toggle">4EDC2013<span class="caret"></span></a>
-		  <!-- XXX: uses white colors in expanded mode -->
-		  <ul class="dropdown-menu">
-		    <li><a href="/convocatoria">Convocatoria</a></li>
-		    <li><a href="/registro">Registro</a></li>
-		  </ul>
-		</li>
-                <li><a href="">Acerca</a></li>
-                <li><a href="">Contacto</a></li>
+		<li><a href="/convocatoria">Convocatoria</a></li>
+		<li><a href="/registro">Registro</a></li>
+                <li><a href="/acerca">Acerca</a></li>
+                <li><a href="/contacto">Contacto</a></li>
               </ul>
             </div>
           </div>
