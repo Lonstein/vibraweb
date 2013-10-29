@@ -1,7 +1,8 @@
 %# input data is supposed to be clean, but you still need to escape it
 % my $v = stash("valid") // {};
 From: =?ISO-8859-1?Q?Colectivo_Vibraci=F3n?= <general@colectivovibracion.org>
-To: <%= $v->{autormail} %>, general@colectivovibracion.org
+To: <%= $v->{autormail} %>
+Cc: general@colectivovibracion.org
 Subject: Colectivo Vibración: Su obra "<%= $v->{eventna} // "" %>" ha sido recibida.
 
 (Éste es un correo electrónico autogenerado)
