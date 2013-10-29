@@ -1,0 +1,104 @@
+% title "4EDC/Convocatoria";
+% layout "carousel";
+% use Text::MultiMarkdown qw(markdown);
+
+% my $mk = begin
+<div markdown="1" class="jumbotron text-center">
+#### El Colectivo Vibración convoca al público en general a participar en su:
+## 4to encuentro de creadores 2013:
+#El disenso
+</div><!-- .jumbotron -->
+
+Este es un festival artístico interdisciplinario sin fin de lucro que permite
+exponer intervenciones de las siguientes áreas: **artes visuales**,
+	**literatura**, **música**, **teatro**, **perfomance** e
+	**interdisciplinarias**. Se llevará a cabo en
+distintas sedes de la zona metropolitana de la ciudad de Monterrey, Nuevo León,
+México; iniciando exposiciones el día *29 de noviembre del 2013* y finalizando
+el día *14 de diciembre*.
+
+# Bases generales
+
+Las obras podrán ser referentes al tema del festival: *El disenso* o de tema libre.
+
+Las obras podrán ser enviadas hasta las 23:59:59 horas del día viernes 22 de noviembre del 2013.
+
+La organización de este festival responderá a todas las solicitudes enviadas antes del día 25 de noviembre del 2013, solicitando aclaración sobre puntos que no sean claros o informando sobre si la obra será presentada o no en el festival y los pormenores de su presentación aceptación.
+
+Se podrán presentar obras individualmente o en grupo.
+
+Todas las propuestas de obra serán enviadas a la organización del festival, ésta se encargará de revisar cada una de ellas, y determinar su inclusión, en el calendario de eventos del festival.
+
+El límite fijo para el número de obras que un individuo (o grupo) puedan enviar es de 2 obras máx. por las áreas antes mencionadas.   
+
+No es requisito presentar obras inéditas, tampoco es requisito ser autor del material a presentar, en caso de ser necesario debe presentarse una constancia de la aprobación del autor.
+
+Llenar la hoja de solicitud y enviar la documentación al correo del área disciplinaria de la obra a presentar (ver más abajo).
+
+Este es un festival sin fin de lucro, por lo que no hay premiación de ningún tipo para los autores cuyas obras sean aceptadas, sin embargo se les entregará un reconocimiento por su participación en el festival.
+
+## Bases específicas
+
+###Del área de artes visuales
+
+Se aceptarán los siguientes tipos de obras:
+
+* Cinematografía.
+* Multimedia.
+* Video.
+
+###Del área de literatura
+
+Se aceptarán los siguientes tipos de obras:
+
+* Lectura de poesía.
+* Lectura de cuento.
+* Lectura de relato.
+* Lectura de ensayo.
+
+El tiempo de lectura por persona no deberá exceder los 10 minutos para permitir la intervención del mayor número de participantes.
+
+###Del área de música
+
+Se aceptarán los siguientes tipos de obras:
+
+* Exposición de música acústica.
+* Exposición de música electroacústica.
+* Jam callejero: concierto dirigido a músicos que gusten de la improvisación.
+* Espacio libre: concierto dirigido a músicos de cualquier genero e instrumentación.
+
+###Del área de teatro
+
+Se aceptarán los siguientes tipos de obras:
+
+* Obras completas.
+* Fragmentos de obra.
+* Teatro - Performance.
+
+###Del área de perfomance
+
+Se aceptarán los siguientes tipos de obras:
+
+* Performance
+* Intervención urbana
+* Acción directa
+
+Límites de la acción:
+
+No se permite afectar inmuebles, edificios históricos y cualquier otro bien
+público.
+
+Se puede interactuar con el publico pero no agredirlo.
+
+###Del área de interdisciplina
+
+Se aceptarán los siguientes tipos de obras:
+
+* Cualquier obra que combine dos o mas disciplinas y tipos de obras que estén
+mencionados en esta convocatoria, ajustándose a las bases generales, y a ésta
+sumándosele las bases específicas de 
+cada disciplina.
+
+Para mayores informes y dudas se podrá escribir un correo electrónico a: general@colectivovibracion.org
+% end
+%== markdown($mk->()->to_string)
