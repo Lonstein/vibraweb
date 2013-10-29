@@ -1,6 +1,5 @@
 % title "4EDC/Convocatoria";
 % layout "carousel";
-% use Text::MultiMarkdown qw(markdown);
 
 % my $mk = begin
 <div markdown="1" class="jumbotron text-center">

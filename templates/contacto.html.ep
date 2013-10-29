@@ -1,6 +1,5 @@
 % title "Contacto";
 % layout "carousel";
-% use Text::MultiMarkdown qw(markdown);
 
 % my $mk = begin
 # Contacto
