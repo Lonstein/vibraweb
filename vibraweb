@@ -34,6 +34,7 @@ helper sendmail => sub {
 };
 
 get "/" => "index";
+get "/convocatoria" => "convocatoria";
 get "/registro" => "registro";
 
 # check form params, validate them, if ok generate an email body, send it
