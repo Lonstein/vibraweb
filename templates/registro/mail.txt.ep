@@ -1,0 +1,83 @@
+%# input data is supposed to be clean, but you still need to escape it
+% my $v = stash("valid") // {};
+From: =?ISO-8859-1?Q?Colectivo_Vibraci=F3n?= <general@colectivovibracion.org>
+To: <%= $v->{autormail} %>, general@colectivovibracion.org
+Subject: Colectivo Vibración: Su obra "<%= $v->{eventna} // "" %>" ha sido recibida.
+
+(Éste es un correo electrónico autogenerado)
+
+Gracias <%= $v->{autorna} %>:
+
+Su solicitud ha sido recibida con los siguientes datos:
+
+------
+Título del evento:
+
+  <%= $v->{eventna} // "" %>
+
+Subtítulo del evento:
+
+  <%= $v->{eventsubna} // "" %>
+
+Descripción:
+
+  <%= $v->{eventdesc} // "" %>
+
+Justificación:
+
+  <%= $v->{eventarg} // "" %>
+
+Disciplina:
+
+  <%= $v->{discipline} // "" %>
+
+Nombre del artista:
+
+  <%= $v->{autorna} // "" %>
+
+Nombre del colectivo:
+
+  <%= $v->{autorcol} || "(vacío)" %>
+
+Correo electrónico:
+
+  <%= $v->{autormail} // "" %>
+
+Teléfono:
+
+  <%= $v->{autortel} || "(vacío)" %>
+
+Duración:
+
+  <%= $v->{eventdur} // "" %>
+
+Horario sugerido:
+
+  <%= $v->{eventtm} || "(vacío)" %>
+
+Espacio:
+
+  <%= $v->{eventspace} // "" %>
+
+Público:
+
+  <%= $v->{eventpublic} // "" %>
+
+Apoyo de personal técnico:
+
+  <%= $v->{eventstaff} // "" %>
+------
+
+Su solicitud será procesada por el colectivo y
+respondida antes del día [Día de fin de respuesta].
+
+Para cualquier duda o aclaración por favor envíe
+un correo a la dirección:
+
+general@colectivovibracion.org
+
+Saludos y esperamos contar con su presencia.
+
+--
+Colectivo Vibración
+http://colectivovibracion.org/
