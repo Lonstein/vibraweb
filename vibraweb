@@ -2,11 +2,18 @@
 
 use Mojolicious::Lite;
 
+use Text::MultiMarkdown;
+
 use constant DEBUG => 0;
 
 my $vibramail = "default\@colectivovibracion.org";
 my @mail = qw(msmtp -a vibracion -t);
 DEBUG && push @mail, qw(-v); # log email transaction
+
+helper markdown => sub {
+	my $self = shift;
+	return Text::MultiMarkdown::markdown(@_);
+};
 
 # receives an email as argument, sends it to recipients in its content, returns
 # false if everything is ok, returns error code otherwise.
