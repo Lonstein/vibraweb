@@ -1,4 +1,4 @@
-% title "4EDC2013/Registro";
+% title "Registro";
 % layout "carousel";
 % my $v = stash("valid") // {};
 % my $error = stash("error");
