@@ -1,0 +1,13 @@
+% title "Contacto";
+% layout "carousel";
+% use Text::MultiMarkdown qw(markdown);
+
+% my $mk = begin
+# Contacto
+
+Tenemos los siguientes canales de comunicación:
+
+* Facebook: [http://www.facebook.com/ColectivoVibracion](http://www.facebook.com/ColectivoVibracion)
+* Correo: [general@colectivovibracion.org](mailto:general@colectivovibracion.org)
+% end
+%== markdown($mk->()->to_string)
