@@ -7,6 +7,7 @@ use Text::MultiMarkdown;
 use constant DEBUG => 0;
 
 my $vibramail = "default\@colectivovibracion.org";
+
 my @mail = qw(msmtp -a vibracion -t);
 DEBUG && push @mail, qw(-v); # log email transaction
 
@@ -16,6 +17,41 @@ helper markdown => sub {
 	my $self = shift;
 	return Text::MultiMarkdown::markdown(@_);
 };
+
+# gets remote address
+helper raddress => sub {
+	my $self = shift;
+	my $ip;
+
+	#return $ip if $ip = $self->req->headers->header('X-Real-IP');
+	return $ip if $ip = $self->tx->remote_address;
+};
+
+# receives challenge and response as args, return 0 if check is ok, error code
+# otherwise
+helper recaptcha => sub {
+	my $self	= shift;
+	my $ch		= shift;
+	my $res		= shift;
+
+	my $r;
+	my $tx;
+	# reCAPTCHA conf
+	my $re = $self->app->config->{recaptcha} or
+	    return "cannot get recaptcha conf";
+
+	$tx = $self->ua->post($re->{verify} => form =>
+	    {privatekey => $re->{privk}, remoteip => $self->raddress(),
+	     challenge => $ch, response => $res});
+	unless ($r = $tx->success) {
+		my ($err, $code) = $tx->error;
+		return $code ? "$code response: $err" : "Connection error: $err";
+	}
+	
+	return $1 if $r->body =~ /^false(\n.*)$/s;
+	return 0;
+};
+
 
 # receives an email as argument, sends it to recipients in its content, returns
 # 0 if everything is ok, returns error code otherwise.
@@ -76,23 +112,32 @@ post "/registro" => sub {
 			$valid{$_} = $val if $val ne "" and length($val) < 32;
 		} elsif ($_ eq "eventsubna") {
 			$valid{$_} = $val if $val ne "" and length($val) < 32;
+		} elsif ($_ eq "recaptcha") {
+			next unless $self->param("recaptcha_response_field");
+			my $recaptcha = $self->recaptcha($self->param("recaptcha_challenge_field"),
+					     $self->param("recaptcha_response_field"));
+			$self->app->log->debug("recaptcha: $recaptcha");
+			$valid{$_} = 1 if $recaptcha eq 0;
 		} else { # simple not emptyness evaluation for other fields
 			$valid{$_} = $val if $val ne "";
 		}
 	}
 	$self->app->log->debug("valid: ",
 	    join(", ", map {defined $valid{$_} ?  "$_: $valid{$_}" : "$_: undef"}  sort keys %valid));
+
 	$self->stash(valid => \%valid);
 	$self->stash(ispost => 1);
-	goto render if grep {not defined $_} values %valid; # any param error
 
-	$error .= "No se pudo generar el correo. ", goto render if
+	$error .= "Parámetros incorrectos", goto error if
+	    grep {not defined $_} values %valid; # any param has error
+	$error .= "No se pudo generar el correo. ", goto error if
 	    not $mail = $self->render("registro/mail", format => 'txt', partial => 1);
-	$error .= "No se pudo enviar el correo. ", goto render if
+	$error .= "No se pudo enviar el correo. ", goto error if
 	    $self->sendmail($mail) != 0;
 
+	return $self->render("registro", format => "html");
 
-	render:
+	error:
 
 	$self->app->log->debug("error: $error");
 	return $self->render("registro", format => "html", error => $error);
