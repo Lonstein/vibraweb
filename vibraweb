@@ -10,6 +10,8 @@ my $vibramail = "default\@colectivovibracion.org";
 my @mail = qw(msmtp -a vibracion -t);
 DEBUG && push @mail, qw(-v); # log email transaction
 
+plugin 'Config';
+
 helper markdown => sub {
 	my $self = shift;
 	return Text::MultiMarkdown::markdown(@_);
