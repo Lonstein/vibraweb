@@ -3,6 +3,7 @@
 % my $v = stash("valid") // {};
 % my $error = stash("error");
 % my $ispost = stash("ispost");
+% my $re = $config->{recaptcha} || {};
 
 <h1>Registro en línea de obras</h1>
 <p>
@@ -218,6 +219,24 @@ que desea exponer en este festival.
 </div>
 
 </fieldset>
+
+<div class="form-group <%== $ispost && ! defined($v->{recaptcha}) ? qq!has-error! : qq!! %>">
+<label for="recaptcha" class="col-md-3 control-label">*Verificación</label>
+<div id="recaptcha" class="col-md-9">
+  %= hidden_field recaptcha => "", id => "recaptcha"
+  <script type="text/javascript"
+     src="http://www.google.com/recaptcha/api/challenge?k=<%= $re->{pubk} =%>">
+  </script>
+  <noscript>
+     <iframe src="http://www.google.com/recaptcha/api/noscript?k=<%= $re->{pubk} =%>"
+         height="300" width="500" frameborder="0"></iframe><br>
+     <textarea name="recaptcha_challenge_field" rows="3" cols="40">
+     </textarea>
+     <input type="hidden" name="recaptcha_response_field"
+         value="manual_challenge">
+  </noscript>
+</div><!-- .col-md-9 -->
+</div><!-- .form-group -->
 
 <div class="form-group">
   <div class="col-md-2 col-md-offset-3">
