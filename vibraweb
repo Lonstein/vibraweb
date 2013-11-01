@@ -18,7 +18,7 @@ helper markdown => sub {
 };
 
 # receives an email as argument, sends it to recipients in its content, returns
-# false if everything is ok, returns error code otherwise.
+# 0 if everything is ok, returns error code otherwise.
 helper sendmail => sub {
 	my $self = shift;
         my $content = shift;
