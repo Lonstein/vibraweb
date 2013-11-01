@@ -1,3 +1,4 @@
 *.sw?
 *.pid
 log/
+vibraweb.conf
