@@ -1,62 +1,53 @@
 % title "Colectivo Vibracion";
 % layout "carousel";
-      <!-- Three columns of text below the carousel -->
-      <div class="row">
-        <div class="col-lg-4">
-          <img class="img-circle" src="data:image/png;base64," data-src="holder.js/140x140" alt="Generic placeholder image">
-          <h2>Heading</h2>
-          <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
-          <p><a class="btn btn-default" href="#">View details &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-          <img class="img-circle" src="data:image/png;base64," data-src="holder.js/140x140" alt="Generic placeholder image">
-          <h2>Heading</h2>
-          <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-          <p><a class="btn btn-default" href="#">View details &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-          <img class="img-circle" src="data:image/png;base64," data-src="holder.js/140x140" alt="Generic placeholder image">
-          <h2>Heading</h2>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-          <p><a class="btn btn-default" href="#">View details &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
-      </div><!-- /.row -->
 
+% my $mk = begin
+#Colectivo Vibración
 
-      <!-- START THE FEATURETTES -->
+El Colectivo Vibración es un conjunto de personas que se dedican a propiciar
+momentos donde se lleva a cabo el quehacer creativo y del ocio conjugado con el
+arte en algunas de sus diferentes posibilidades y formas. Nos enfocamos en
+diversos espacios dependiendo la necesidad de las obras que se vayan a
+presentar. 
 
-      <hr class="featurette-divider">
+Quienes integramos el colectivo coincidimos en la necesidad de propiciar las
+prácticas culturales con las que en ese momento nos sentimos identificados,
+donde diversidad de expresiones dedicadas a la creación y presentación de
+actividades culturales y artísticas se realicen y puedan incidir en un ambiente
+de personas interesadas en transmitir la percepción que tienen de su entorno
+transfiriéndola desde una plataforma que apela a la actividad cultural, al ocio
+a la crítica, lo contemplativo y lo que se entienda por arte, un arte ejercido
+con libertad de búsqueda de cada grupo o individuo expositor., En ese sentido
+nos resulta innecesario abarcar un perfil homogéneo que nos identifique como
+grupo y que quizá sugiera condicionamientos en relación con los participantes. 
 
-      <div class="row featurette">
-        <div class="col-md-7">
-          <h2 class="featurette-heading">First featurette heading. <span class="text-muted">It'll blow your mind.</span></h2>
-          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-        </div>
-        <div class="col-md-5">
-          <img class="featurette-image img-responsive" src="data:image/png;base64," data-src="holder.js/500x500/auto" alt="Generic placeholder image">
-        </div>
-      </div>
+Este Festival lleva por nombre *Encuentro de Creadores*, la edición es
+semestral siendo esta la vísperas de su 4ta edición ahora con la paradójica
+temática «*Del Disenso*»: El acuerdo es que no hay acuerdo.
 
-      <hr class="featurette-divider">
+Entre las expresiones que utilizamos nosotros como participantes activos y a
+su vez las que se encuentran como parte de la convocatoria extendida a los
+colegas creadores son las siguientes: 
 
-      <div class="row featurette">
-        <div class="col-md-5">
-          <img class="featurette-image img-responsive" src="data:image/png;base64," data-src="holder.js/500x500/auto" alt="Generic placeholder image">
-        </div>
-        <div class="col-md-7">
-          <h2 class="featurette-heading">Oh yeah, it's that good. <span class="text-muted">See for yourself.</span></h2>
-          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-        </div>
-      </div>
+La performance, Música, Plásticas, Letras,  Teatro, Audiovisual y obras
+interdisciplinarias.  Procuramos trabajar con las áreas que aparte de
+provocarnos como creadores tenemos conocimiento del lenguaje para ofrecer
+espacios y retro alimentación adecuados y dignos a los participantes
+involucrados. 
 
-      <hr class="featurette-divider">
+Es importante mencionar la necesidad de que este festival sea compartido en
+comunidad dándonos cita para ser partícipes de la obra de el otro con el
+gusto de generar encuentros y, por qué no, una comunidad que si bien no
+depende de los demás a la hora de proponer un proyecto a realizar pero sí
+el poder contar con su compañía en el momento de la presentación de la
+obra. 
 
-      <div class="row featurette">
-        <div class="col-md-7">
-          <h2 class="featurette-heading">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
-          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-        </div>
-        <div class="col-md-5">
-          <img class="featurette-image img-responsive" src="data:image/png;base64," data-src="holder.js/500x500/auto" alt="Generic placeholder image">
-        </div>
-      </div>
+# Contacto
+
+Tenemos los siguientes canales de comunicación:
+
+* Facebook: [http://www.facebook.com/ColectivoVibracion](http://www.facebook.com/ColectivoVibracion)
+* Correo: [general@colectivovibracion.org](mailto:general@colectivovibracion.org)
+
+% end
+%== markdown $mk->()->to_string
