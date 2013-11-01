@@ -96,5 +96,5 @@ post "/registro" => sub {
 	return $self->render("registro", format => "html", error => $error);
 } => "registro";
 
-app->config(hypnotoad => {listen => ["http://*:3000/"], proxy => 1});
+app->config(hypnotoad => {proxy => 1});
 app->start;
