@@ -41,8 +41,7 @@
                 <li><a href="/">Inicio</a></li>
 		<li><a href="/convocatoria">Convocatoria</a></li>
 		<li><a href="/registro">Registro</a></li>
-                <li><a href="/acerca">Acerca</a></li>
-                <li><a href="/contacto">Contacto</a></li>
+                <li><a href="/#contacto">Contacto</a></li>
               </ul>
             </div>
           </div>
