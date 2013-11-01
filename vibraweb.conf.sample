@@ -1,0 +1,15 @@
+# move this to vibraweb.conf when ready to use
+{
+	# reCAPTCHA variables
+	recaptcha => {
+		pubk	=> "",
+		privk	=> "",
+		verify	=> "http://www.google.com/recaptcha/api/verify",
+		# XXX: set this to true when you are testing recaptcha fields
+		# from a host in a private network (RFC 1918) to pretend that
+		# the request came from the IP address of your web server,
+		# assuming your web server is also your fw and has a public ip
+		# address, otherwise recaptcha validations will fail
+		xxxprivnet => undef,
+	}
+};
