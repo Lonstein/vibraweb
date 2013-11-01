@@ -129,8 +129,17 @@
       <hr class="featurette-divider">
       <!-- FOOTER -->
       <footer>
-        <p class="pull-right"><a href="#">Back to top</a></p>
-        <p>&copy; 2013 Colectivo Vibración. &middot; <a href="#">Privacidad</a> &middot;</p>
+        <div class="col-md-8">
+	<p>
+	&copy; 2013 Colectivo Vibración. &middot;
+	<a href="https://github.com/acamari/vibraweb">Esta página está hecha
+	100% con software libre</a> &middot;
+	<a href="#">Privacidad</a> &middot;
+	</p>
+	</div>
+	<div class="col-md-4">
+        <p class="text-right"><a href="#">Back to top</a></p>
+	</div>
       </footer>
 
     </div><!-- /.container -->
