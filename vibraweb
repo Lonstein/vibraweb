@@ -37,8 +37,11 @@ helper recaptcha => sub {
 	my $r;
 	my $tx;
 	# reCAPTCHA conf
-	my $re = $self->app->config->{recaptcha} or
-	    return "cannot get recaptcha conf";
+	my $re;
+
+	return "cannot get recaptcha conf" unless
+	    $re = $self->app->config->{recaptcha} and
+	    $re->{verify} and $re->{privk} and $re->{pubk};
 
 	$tx = $self->ua->post($re->{verify} => form =>
 	    {privatekey => $re->{privk}, remoteip => $self->raddress(),
