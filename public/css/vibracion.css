@@ -1,0 +1,10 @@
+body {
+	/* show below nav */
+	margin-top: 70px;
+}
+
+@media (min-width: 768px) {
+	.container {
+		width: 750px;
+	}
+}

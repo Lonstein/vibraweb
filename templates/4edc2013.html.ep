@@ -1,8 +1,8 @@
-% title "Convocatoria";
-% layout "carousel";
+% title "4EDC2013";
+% layout "vibracion";
 
 % my $mk = begin
-<div markdown="1" class="jumbotron text-center">
+<div id="convocatoria" markdown="1" class="jumbotron text-center">
 #### El Colectivo Vibración convoca al público en general a participar en su:
 ## 4to encuentro de creadores 2013:
 #El disenso
@@ -100,4 +100,11 @@ cada disciplina.
 
 Para mayores informes y dudas se podrá escribir un correo electrónico a: general@colectivovibracion.org
 % end
-%== markdown($mk->()->to_string)
+
+<div class="row">
+  <div class="col-sm-12">
+    %== markdown($mk->()->to_string)
+  </div><!-- .col-sm-12 -->
+</div><!-- .row -->
+
+%= include "registro"

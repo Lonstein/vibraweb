@@ -1,11 +1,9 @@
-% title "Registro";
-% layout "carousel";
 % my $v = stash("valid") // {};
 % my $error = stash("error");
 % my $ispost = stash("ispost");
 % my $re = $config->{recaptcha} || {};
 
-<h1>Registro en línea de obras</h1>
+<h2 id="registro">Registro en línea de obras</h2>
 <p>
 Por favor regístrese en una ocasión por cada obra/evento
 que desea exponer en este festival.
@@ -15,7 +13,8 @@ que desea exponer en este festival.
 <em><small>Los campos requeridos están marcados con * (asterisco).</small></em>
 </p>
 
-<div class="col-md-4 col-md-offset-2">
+<div class="row">
+<div class="col-sm-8 col-sm-offset-2">
 % if ($ispost and grep {not defined $_} values %$v) { # input error
   <div class="alert alert-danger">
   <p class="lead text-center">Datos incorrectos</p>
@@ -44,16 +43,18 @@ que desea exponer en este festival.
   sys@colectivovibracion.org</p>
   </div><!-- .alert-success -->
 % }
-</div><!-- .col-md-4  -->
+</div><!-- .col-sm-8  -->
+</div><!--.row-->
 
-<div class="col-md-9">
-%= form_for "/registro" => (role => "form", method => "POST", class => "form-horizontal well ") => begin
+<div class="row">
+<div class="col-sm-12">
+<form role="form" method="POST" class="form-horizontal well">
 <fieldset>
 <legend>Sobre la obra</legend>
 
 <div class="form-group <%== $ispost && ! defined($v->{eventna}) ? qq!has-error! : qq!! %>">
-  <label for="eventna" class="col-md-3 control-label">*Título del evento</label>
-  <div class="col-md-9">
+  <label for="eventna" class="col-sm-3 control-label">*Título del evento</label>
+  <div class="col-sm-9">
     %= text_field "eventna", class => "form-control", size => 32, maxlength => 32
     <span class="help-block"> Debe mantener una longitud corta (&lt; 32
 	caracteres), se usará en publicidad exactamente como está
@@ -62,8 +63,8 @@ que desea exponer en este festival.
 </div>
 
 <div class="form-group <%== $ispost && ! defined($v->{eventsubna}) ? qq!has-error! : qq!! %>">
-  <label for="eventsubna" class="col-md-3 control-label">*Subtítulo del evento</label>
-  <div class="col-md-9">
+  <label for="eventsubna" class="col-sm-3 control-label">*Subtítulo del evento</label>
+  <div class="col-sm-9">
     %= text_field "eventsubna", class => "form-control", size => 32, maxlength => 32
     <span class="help-block"> Debe mantener una longitud
     relativamente corta (&lt; 32 caracteres), se usará en publicidad exactamente
@@ -72,8 +73,8 @@ que desea exponer en este festival.
 </div>
 
 <div class="form-group <%== $ispost && ! defined($v->{eventdesc}) ? qq!has-error! : qq!! %>">
-  <label for="eventdesc" class="col-md-3 control-label">*Descripción</label>
-  <div class="col-md-9">
+  <label for="eventdesc" class="col-sm-3 control-label">*Descripción</label>
+  <div class="col-sm-9">
     %= text_area "eventdesc", class => "form-control", rows => 4
     <span class="help-block">Describa cómo se desarrolla el evento en tiempo y
     forma, qué elementos intervienen, cuántas personas; sea detallado, ésta se
@@ -84,8 +85,8 @@ que desea exponer en este festival.
 </div>
 
 <div class="form-group <%== $ispost && ! defined($v->{eventarg}) ? qq!has-error! : qq!! %>">
-  <label for="eventarg" class="col-md-3 control-label">*Justificación</label>
-  <div class="col-md-9">
+  <label for="eventarg" class="col-sm-3 control-label">*Justificación</label>
+  <div class="col-sm-9">
     %= text_area "eventarg", class => "form-control", rows => 4
     <span class="help-block">Argumentación artística, explique el porqué y para
     qué de la obra. Tome en cuenta que Vibración busca promover eventos
@@ -95,8 +96,8 @@ que desea exponer en este festival.
 </div>
 
 <div class="form-group <%== $ispost && ! defined($v->{discipline}) ? qq!has-error! : qq!! %>">
-  <label for="discipline" class="col-md-3 control-label">*Disciplina</label>
-  <div class="col-md-9">
+  <label for="discipline" class="col-sm-3 control-label">*Disciplina</label>
+  <div class="col-sm-9">
     %= text_field "discipline", class => "form-control"
     <span class="help-block"> Use la disciplina que más se aproxime a su obra. </span>
   </div>
@@ -107,8 +108,8 @@ que desea exponer en este festival.
 <fieldset>
 <legend> Sobre el artista </legend>
 <div class="form-group <%== $ispost && ! defined($v->{autorna}) ? qq!has-error! : qq!! %>">
-  <label for="autorna" class="col-md-3 control-label">*Artista</label>
-  <div class="col-md-9">
+  <label for="autorna" class="col-sm-3 control-label">*Artista</label>
+  <div class="col-sm-9">
     %= text_field "autorna", class => "form-control"
     <span class="help-block">Para procesar la solicitud de
     inclusión en el 4EDC2013 requerimos una persona que sea la <em>encargada</em>
@@ -120,8 +121,8 @@ que desea exponer en este festival.
 </div>
 
 <div class="form-group <%== $ispost && ! defined($v->{autorcol}) ? qq!has-error! : qq!! %>">
-  <label for="autorcol" class="col-md-3 control-label">Colectivo(s)</label>
-  <div class="col-md-9">
+  <label for="autorcol" class="col-sm-3 control-label">Colectivo(s)</label>
+  <div class="col-sm-9">
     %= text_field "autorcol", class => "form-control"
     <span class="help-block"> Opcional. Nombre(s) del colectivo al que pertenece el
     artista y que está proponiendo la obra, <strong>no incluir nombres de colectivos que
@@ -130,8 +131,8 @@ que desea exponer en este festival.
 </div>
 
 <div class="form-group <%== $ispost && ! defined($v->{autormail}) ? qq!has-error! : qq!! %>">
-  <label for="autormail" class="col-md-3 control-label">*Correo electrónico</label>
-  <div class="col-md-9">
+  <label for="autormail" class="col-sm-3 control-label">*Correo electrónico</label>
+  <div class="col-sm-9">
     %= text_field "autormail", class => "form-control"
     <span class="help-block">Canal principal de comunicación, se usará para
     informar de la aceptación de la obra, horarios disponibles, requisitos
@@ -141,9 +142,9 @@ que desea exponer en este festival.
 </div>
 
 <div class="form-group <%== $ispost && ! defined($v->{autortel}) ? qq!has-error! : qq!! %>">
-  <label for="autortel" class="col-md-3 control-label">Teléfono</label>
-  <div class="col-md-9">
-    %= tel_field "autortel", class => "form-control"
+  <label for="autortel" class="col-sm-3 control-label">Teléfono</label>
+  <div class="col-sm-9">
+    %= text_field "autortel", class => "form-control"
     <span class="help-block">Opcional, pero altamente recomendado. De
     preferencia usar número de teléfono celular. Canal secundario de
     comunicación, se usará sólo si la obra fue aceptada y sólo el día en que ésta
@@ -158,31 +159,31 @@ que desea exponer en este festival.
 <legend>Requisitos técnicos de la obra</legend>
 
 <div class="form-group <%== $ispost && ! defined($v->{eventdur}) ? qq!has-error! : qq!! %>">
-  <label for="eventdur" class="col-md-3 control-label">*Duración</label>
-  <div class="col-md-3">
-    %= time_field "eventdur", class => "form-control", value => "00:00"
+  <label for="eventdur" class="col-sm-3 control-label">*Duración</label>
+  <div class="col-sm-3">
+    %= text_field "eventdur", class => "form-control", value => "00:00"
   </div> 
 </div>
 
 <div class="form-group <%== $ispost && ! defined($v->{eventdur}) ? qq!has-error! : qq!! %>">
-  <div class="col-md-9 col-md-offset-3">
+  <div class="col-sm-9 col-sm-offset-3">
     <span class="help-block">Frente al público. No podemos aceptar eventos con
     duración mayor a 2 horas. Formato de 24 horas.</span>
   </div> 
 </div>
 
 <div class="form-group <%== $ispost && ! defined($v->{eventtm}) ? qq!has-error! : qq!! %>">
-  <label for="eventtm" class="col-md-3 control-label">Horario sugerido</label>
-  <div class="col-md-9">
-    %= time_field "eventtm", class => "form-control", value => "00:00"
+  <label for="eventtm" class="col-sm-3 control-label">Horario sugerido</label>
+  <div class="col-sm-9">
+    %= text_field "eventtm", class => "form-control", value => "00:00"
     <span class="help-block">Opcional. En qué horario del día le gustaría que fuera
     ubicada la obra. Formato de 24 horas.</span>
   </div>
 </div>
 
 <div class="form-group <%== $ispost && ! defined($v->{eventspace}) ? qq!has-error! : qq!! %>">
-  <label for="eventspace" class="col-md-3 control-label">*Espacio</label>
-  <div class="col-md-9">
+  <label for="eventspace" class="col-sm-3 control-label">*Espacio</label>
+  <div class="col-sm-9">
     %= text_area "eventspace", class => "form-control", rows => 4
     <span class="help-block">Requisitos espaciales, por ej. si requiere un espacio al
     aire libre, o cerrado, escenario, dimensiones, piso especial, etc.
@@ -192,8 +193,8 @@ que desea exponer en este festival.
 
 
 <div class="form-group <%== $ispost && ! defined($v->{eventpublic}) ? qq!has-error! : qq!! %>">
-  <label for="eventpublic" class="col-md-3 control-label">*Público</label>
-  <div class="col-md-9">
+  <label for="eventpublic" class="col-sm-3 control-label">*Público</label>
+  <div class="col-sm-9">
     %= text_area "eventpublic", class => "form-control", rows => 4
     <span class="help-block">Detalle si su obra está dirigida al público en
     general o está dirigida a un público específico: infantil, adulto,
@@ -204,9 +205,9 @@ que desea exponer en este festival.
 </div>
 
 <div class="form-group <%== $ispost && ! defined($v->{eventstaff}) ? qq!has-error! : qq!! %>">
-  <label for="eventstaff" class="col-md-3 control-label">*Apoyo de personal
+  <label for="eventstaff" class="col-sm-3 control-label">*Apoyo de personal
   técnico</label>
-  <div class="col-md-9">
+  <div class="col-sm-9">
     %= text_area "eventstaff", class => "form-control", rows => 4
     <span class="help-block">
       Además del personal que se encarga del
@@ -220,28 +221,30 @@ que desea exponer en este festival.
 
 </fieldset>
 
-<div class="form-group <%== $ispost && ! defined($v->{recaptcha}) ? qq!has-error! : qq!! %>">
-<label for="recaptcha" class="col-md-3 control-label">*Verificación</label>
-<div id="recaptcha" class="col-md-9">
-  %= hidden_field recaptcha => "", id => "recaptcha"
-  <script type="text/javascript"
-     src="http://www.google.com/recaptcha/api/challenge?k=<%= $re->{pubk} =%>">
-  </script>
-  <noscript>
-     <iframe src="http://www.google.com/recaptcha/api/noscript?k=<%= $re->{pubk} =%>"
-         height="300" width="500" frameborder="0"></iframe><br>
-     <textarea name="recaptcha_challenge_field" rows="3" cols="40">
-     </textarea>
-     <input type="hidden" name="recaptcha_response_field"
-         value="manual_challenge">
-  </noscript>
-</div><!-- .col-md-9 -->
-</div><!-- .form-group -->
+%# XXX: disable while we dont know whats wrong...
+%#<div class="form-group <%== $ispost && ! defined($v->{recaptcha}) ? qq!has-error! : qq!! %>">
+%#<label for="recaptcha" class="col-sm-3 control-label">*Verificación</label>
+%#<div id="recaptcha" class="col-sm-9">
+%#  %= hidden_field recaptcha => "", id => "recaptcha"
+%#  <script type="text/javascript"
+%#     src="http://www.google.com/recaptcha/api/challenge?k=<%= $re->{pubk} =%>">
+%#  </script>
+%#  <noscript>
+%#     <iframe src="http://www.google.com/recaptcha/api/noscript?k=<%= $re->{pubk} =%>"
+%#         height="300" width="500" frameborder="0"></iframe><br>
+%#     <textarea name="recaptcha_challenge_field" rows="3" cols="40">
+%#     </textarea>
+%#     <input type="hidden" name="recaptcha_response_field"
+%#         value="manual_challenge">
+%#  </noscript>
+%#</div><!-- .col-sm-9 -->
+%#</div><!-- .form-group -->
 
 <div class="form-group">
-  <div class="col-md-2 col-md-offset-3">
+  <div class="col-sm-2 col-sm-offset-3">
     %= submit_button "Registrar", class => "form-control btn btn-primary"
   </div>
 </div>
-% end
-</div><!-- .col-md-9 -->
+</form>
+</div><!-- .col-sm-12 -->
+</div><!-- .row -->

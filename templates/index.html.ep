@@ -1,53 +1,122 @@
 % title "Colectivo Vibracion";
-% layout "carousel";
+% layout "vibracion";
 
-% my $mk = begin
-#Colectivo Vibración
+% content_for styles => begin
+%= stylesheet begin
+@media (min-width: 768px) {
+	/* align to bottom on >=sm devices */
+	#subtitle {
+		padding-top: 150px;
+	}
+}
 
-El Colectivo Vibración es un conjunto de personas que se dedican a propiciar
-momentos donde se lleva a cabo el quehacer creativo y del ocio conjugado con el
-arte en algunas de sus diferentes posibilidades y formas. Nos enfocamos en
-diversos espacios dependiendo la necesidad de las obras que se vayan a
-presentar. 
+.what .row.gallery .col {
+	margin-top: 30px;
+}
 
-Quienes integramos el colectivo coincidimos en la necesidad de propiciar las
-prácticas culturales con las que en ese momento nos sentimos identificados,
-donde diversidad de expresiones dedicadas a la creación y presentación de
-actividades culturales y artísticas se realicen y puedan incidir en un ambiente
-de personas interesadas en transmitir la percepción que tienen de su entorno
-transfiriéndola desde una plataforma que apela a la actividad cultural, al ocio
-a la crítica, lo contemplativo y lo que se entienda por arte, un arte ejercido
-con libertad de búsqueda de cada grupo o individuo expositor., En ese sentido
-nos resulta innecesario abarcar un perfil homogéneo que nos identifique como
-grupo y que quizá sugiera condicionamientos en relación con los participantes. 
-
-Este Festival lleva por nombre *Encuentro de Creadores*, la edición es
-semestral siendo esta la vísperas de su 4ta edición ahora con la paradójica
-temática «*Del Disenso*»: El acuerdo es que no hay acuerdo.
-
-Entre las expresiones que utilizamos nosotros como participantes activos y a
-su vez las que se encuentran como parte de la convocatoria extendida a los
-colegas creadores son las siguientes: 
-
-La performance, Música, Plásticas, Letras,  Teatro, Audiovisual y obras
-interdisciplinarias.  Procuramos trabajar con las áreas que aparte de
-provocarnos como creadores tenemos conocimiento del lenguaje para ofrecer
-espacios y retro alimentación adecuados y dignos a los participantes
-involucrados. 
-
-Es importante mencionar la necesidad de que este festival sea compartido en
-comunidad dándonos cita para ser partícipes de la obra de el otro con el
-gusto de generar encuentros y, por qué no, una comunidad que si bien no
-depende de los demás a la hora de proponer un proyecto a realizar pero sí
-el poder contar con su compañía en el momento de la presentación de la
-obra. 
-
-# Contacto
-
-Tenemos los siguientes canales de comunicación:
-
-* Facebook: [http://www.facebook.com/ColectivoVibracion](http://www.facebook.com/ColectivoVibracion)
-* Correo: [general@colectivovibracion.org](mailto:general@colectivovibracion.org)
+.what .row.gallery.first {
+	margin-top: -30px;
+}
 
 % end
-%== markdown $mk->()->to_string
+% end
+
+<div class="row">
+  <div class="col-sm-6 col-sm-push-6">
+    <img data-src="holder.js/290x290/text:290x290,vibralogo" />
+  </div><!-- .col-sm-6 -->
+
+  <div id="subtitle" class="col-sm-6 col-sm-pull-6 text-right">
+    <h1>Subtítulo</h1>
+    <form>
+    <button class="btn btn-primary btn-lg">4EDC2013: Registro</button>
+    </form>
+  </div><!-- .col-sm-6 -->
+</div><!-- .row -->
+
+<div class="what">
+  <h2>Qué</h2>
+  <div class="row gallery first">
+    <div class="col col-sm-4">
+      <img data-src="holder.js/220x220" />	
+    </div><!-- .col-sm-4 -->
+    <div class="col col-sm-4">
+      <img data-src="holder.js/220x220" />	
+    </div><!-- .col-sm-4 -->
+    <div class="col col-sm-4">
+      <img data-src="holder.js/220x220" />	
+    </div><!-- .col-sm-4 -->
+  </div><!-- .row -->
+  
+  <div class="row gallery">
+    <div class="col col-sm-4">
+      <img data-src="holder.js/220x220" />	
+    </div><!-- .col-sm-4 -->
+    <div class="col col-sm-4">
+      <img data-src="holder.js/220x220" />	
+    </div><!-- .col-sm-4 -->
+    <div class="col col-sm-4">
+      <img data-src="holder.js/220x220" />	
+    </div><!-- .col-sm-4 -->
+  </div><!-- .row -->
+
+  <div class="row">
+    <div class="col-sm-12">
+      <p>
+	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+	veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+	commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+	velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+	occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+	mollit anim id est laborum.
+      </p>
+    </div><!-- .col-sm-12 -->
+  </div><!-- .row -->
+</div><!-- .what -->
+
+<h2>Cómo</h2>
+<div class="row">
+  <div class="col-sm-12">
+  <h3>Proceso EDC</h3>
+  <img data-src="holder.js/750x400/text:750x400,proceso EDC/auto/textmode:exact" class="img-responsive" />
+  </div><!-- .col-sm-12 -->
+</div><!-- .row -->
+
+<h2>Quiénes</h2>
+<div class="row">
+  <div class="col-sm-6">
+  <img data-src="holder.js/750x400/text:miembros/auto" class="img-responsive" />
+  </div><!-- .col-sm-6 -->
+
+  <div class="col-sm-6">
+  <img data-src="holder.js/750x400/text:artistas|colectivos/auto" class="img-responsive" />
+  </div><!-- .col-sm-6 -->
+</div><!-- .row -->
+
+<h2>Dónde</h2>
+<div class="row">
+  <div class="col-sm-12">
+  <img data-src="holder.js/750x400/text:algo sobre sedes/auto" class="img-responsive" />
+  </div><!-- .col-sm-12 -->
+</div><!-- .row -->
+
+<h2>Historia</h2>
+<div class="row">
+  <div class="col-sm-12">
+  <img data-src="holder.js/750x400/text:historia del colectivo|edc/auto" class="img-responsive" />
+  </div><!-- .col-sm-12 -->
+</div><!-- .row -->
+
+<h2 id="contacto">Contacto</h2>
+<div class="row">
+  <div class="col-sm-12">
+    <p>Tenemos los siguientes canales de comunicación: </p>
+
+    <p><a class="facebook" href="http://www.facebook.com/ColectivoVibracion" title="Facebook">
+         <i class="icon fa fa-facebook-square"></i>facebook.com/ColectivoVibracion</a></p
+
+    <p><a class="mail" href="mailto:general@colectivovibracion.org" title="Correo">
+         <i class="icon fa fa-envelope-o"></i>general@colectivovibracion.org</a></p>
+  </div><!-- .col-sm-12 -->
+</div><!-- .row -->
