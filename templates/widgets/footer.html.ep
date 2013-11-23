@@ -1,0 +1,33 @@
+<div class="footer container">
+  <hr class="featurette-divider">
+  <footer>
+  <small>
+    <div class="row">
+      <div class="col-sm-12">
+	<p>
+	2013 Colectivo Vibración. 
+	</p>
+	<p>
+	<a class="facebook" href="http://www.facebook.com/ColectivoVibracion" title="Facebook">
+	<i class="icon fa fa-facebook-square"></i>facebook.com/ColectivoVibracion</a>
+	&middot;
+	<a class="mail" href="mailto:general@colectivovibracion.org" title="Correo">
+	<i class="icon fa fa-envelope-o"></i>general@colectivovibracion.org</a>
+	</p>
+      </div>
+    </div><!--.row-->
+
+    <div class="row">
+	<div class="col-sm-3">
+	  <p>Desarrollada por 00z</p>
+	</div><!--.col-sm-3-->
+	<div class="col-sm-3">
+	  <a href="#"><img src="/img/logo/obsd.gif" class="img-responsive" alt="OpenBSD logo"/></a>
+	</div><!--.col-sm-3-->
+	<div class="col-sm-3">
+	  <a href="#"><img src="/img/logo/mojo-black.png" class="img-responsive" alt="Mojolicious logo"/></a>
+	</div><!--.col-sm-3-->
+    </div><!--.row-->
+  </small>
+  </footer>
+</div><!-- /.container -->

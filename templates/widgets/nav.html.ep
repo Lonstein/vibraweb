@@ -1,0 +1,29 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/"><img src="/img/colectivovibracion.png"></a>
+    </div>
+    <div class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li><a href="/">Colectivo</a></li>
+        <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">4EDC2013<i class="caret"></i></a>
+	      <ul class="dropdown-menu">
+		<li><a href="/4edc2013#convocatoria">
+		  <i class="visible-xs pull-left icon fa fa-angle-right"></i>
+		  Convocatoria</a>
+		</li>
+		<li><a href="/4edc2013#registro">
+		  <i class="visible-xs pull-left icon fa fa-angle-right"></i>
+		  Registro</a></li>
+	      </ul>
+	    </li>
+        <li><a href="/#contacto">Contacto</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
