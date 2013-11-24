@@ -34,6 +34,17 @@ module.exports = function(grunt) {
         },
         src: ['less/vibracion/vibracion.less'],
         dest: 'css/vibracion.min.css'
+      },
+      t4edc2013: {
+        src: ['less/4edc2013/4edc2013.less'],
+        dest: 'css/4edc2013.css'
+      },
+      t4edc2013_min: {
+        options: {
+          compress: true
+        },
+        src: ['less/4edc2013/4edc2013.less'],
+        dest: 'css/4edc2013.min.css'
       }
     },
 

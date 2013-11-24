@@ -1,5 +1,5 @@
 % title "4EDC2013";
-% layout "vibracion";
+% layout "4edc2013";
 
 % my $mk = begin
 <div id="convocatoria" markdown="1" class="jumbotron text-center">
