@@ -22,8 +22,8 @@
 % end
 
 <div class="row">
-  <div class="col-sm-6 col-sm-push-6">
-    <img data-src="holder.js/290x290/text:290x290,vibralogo" />
+  <div class="col-sm-6 col-sm-push-6 text-right">
+    <img src="/img/vibralogo.png" />
   </div><!-- .col-sm-6 -->
 
   <div id="subtitle" class="col-sm-6 col-sm-pull-6 text-right">
