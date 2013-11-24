@@ -9,9 +9,10 @@
 
   <title><%= $title %></title>
 
-  %= stylesheet "/lib/bs/dist/css/bootstrap.min.css"
+  %= stylesheet "http://fonts.googleapis.com/css?family=EB+Garamond"
+  %= stylesheet "/css/vibracion.min.css"
   %= stylesheet "/lib/fa/css/font-awesome.min.css"
-  %= stylesheet "/css/vibracion.css"
+  %= stylesheet "/css/main.css"
   %== content_for "styles";
 
   <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -30,9 +31,7 @@
 
   <!-- Placed at the end of the document so the pages load faster -->
   %= javascript "/lib/jquery.js";
-  %= javascript "/lib/bs/js/transition.js";
-  %= javascript "/lib/bs/js/dropdown.js";
-  %= javascript "/lib/bs/js/collapse.js";
+  %= javascript "/lib/bs/dist/js/bootstrap.min.js";
   %= javascript "/lib/holder.js";
   %= content_for "scripts";
 </body>
