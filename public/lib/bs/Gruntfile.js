@@ -100,6 +100,17 @@ module.exports = function(grunt) {
         },
         src: ['less/theme.less'],
         dest: 'dist/css/<%= pkg.name %>-theme.min.css'
+      },
+      vibracion: {
+        src: ['less/vibracion.less'],
+        dest: 'dist/css/vibracion.css'
+      },
+      vibracion_min: {
+        options: {
+          compress: true
+        },
+        src: ['less/vibracion.less'],
+        dest: 'dist/css/vibracion.min.css'
       }
     },
 
