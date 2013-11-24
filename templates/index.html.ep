@@ -29,7 +29,7 @@
   <div id="subtitle" class="col-sm-6 col-sm-pull-6 text-right">
     <h1>Subtítulo</h1>
     <form>
-    <button class="btn btn-primary btn-lg">4EDC2013: Registro</button>
+    <button class="btn btn-primary btn-block btn-lg">4EDC2013: Registro</button>
     </form>
   </div><!-- .col-sm-6 -->
 </div><!-- .row -->
