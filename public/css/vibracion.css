@@ -7096,3 +7096,7 @@ td.visible-print {
     display: none !important;
   }
 }
+
+.navbar {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
