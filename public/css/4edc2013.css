@@ -305,11 +305,11 @@ html {
 }
 
 body {
-  font-family: "EB Garamond", Georgia, "Times New Roman", Times, serif;
+  font-family: "Varela Round", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 20px;
   line-height: 1.428571429;
-  color: #000000;
-  background-color: #ffffff;
+  color: #ffffff;
+  background-color: #000000;
 }
 
 input,
@@ -358,7 +358,7 @@ img {
   max-width: 100%;
   padding: 4px;
   line-height: 1.428571429;
-  background-color: #ffffff;
+  background-color: #000000;
   border: 1px solid #dddddd;
   border-radius: 4px;
   -webkit-transition: all 0.2s ease-in-out;
@@ -481,7 +481,7 @@ h6,
 .h4,
 .h5,
 .h6 {
-  font-family: "EB Garamond", Georgia, "Times New Roman", Times, serif;
+  font-family: "Varela Round", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 500;
   line-height: 1.1;
   color: inherit;
@@ -555,27 +555,27 @@ h1,
 
 h2,
 .h2 {
-  font-size: 43px;
+  font-size: 34px;
 }
 
 h3,
 .h3 {
-  font-size: 34px;
+  font-size: 28px;
 }
 
 h4,
 .h4 {
-  font-size: 25px;
+  font-size: 26px;
 }
 
 h5,
 .h5 {
-  font-size: 20px;
+  font-size: 24px;
 }
 
 h6,
 .h6 {
-  font-size: 17px;
+  font-size: 22px;
 }
 
 .page-header {
@@ -1665,7 +1665,7 @@ th {
 }
 
 .table .table {
-  background-color: #ffffff;
+  background-color: #000000;
 }
 
 .table-condensed > thead > tr > th,
@@ -2163,7 +2163,7 @@ textarea.input-lg {
   display: block;
   margin-top: 5px;
   margin-bottom: 10px;
-  color: #404040;
+  color: #ffffff;
 }
 
 @media (min-width: 768px) {
@@ -4145,7 +4145,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 .nav-tabs > li.active > a:focus {
   color: #555555;
   cursor: default;
-  background-color: #ffffff;
+  background-color: #000000;
   border: 1px solid #dddddd;
   border-bottom-color: transparent;
 }
@@ -4198,7 +4198,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
   .nav-tabs.nav-justified > .active > a,
   .nav-tabs.nav-justified > .active > a:hover,
   .nav-tabs.nav-justified > .active > a:focus {
-    border-bottom-color: #ffffff;
+    border-bottom-color: #000000;
   }
 }
 
@@ -4288,7 +4288,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
   .nav-tabs-justified > .active > a,
   .nav-tabs-justified > .active > a:hover,
   .nav-tabs-justified > .active > a:focus {
-    border-bottom-color: #ffffff;
+    border-bottom-color: #000000;
   }
 }
 
@@ -5269,7 +5269,7 @@ a.list-group-item.active > .badge,
   padding: 4px;
   margin-bottom: 28px;
   line-height: 1.428571429;
-  background-color: #ffffff;
+  background-color: #000000;
   border: 1px solid #dddddd;
   border-radius: 4px;
   -webkit-transition: all 0.2s ease-in-out;
@@ -5292,7 +5292,7 @@ a.thumbnail.active {
 
 .thumbnail .caption {
   padding: 9px;
-  color: #000000;
+  color: #ffffff;
 }
 
 .alert {
@@ -7097,12 +7097,6 @@ td.visible-print {
   }
 }
 
-/*
-@border-radius-base:	0;
-@border-radius-large:	0;
-@border-radius-small:	0;
-*/
-
 .btn-primary:hover,
 .btn-primary:focus,
 .btn-primary:active,
@@ -7114,5 +7108,5 @@ td.visible-print {
 }
 
 .navbar {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Varela Round", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }

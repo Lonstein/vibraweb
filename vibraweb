@@ -15,7 +15,7 @@ plugin 'Config';
 
 helper markdown => sub {
 	my $self = shift;
-	return Text::MultiMarkdown::markdown(@_);
+	return Text::MultiMarkdown::markdown(shift->()->to_string());
 };
 
 # gets remote address

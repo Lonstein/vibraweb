@@ -9,15 +9,15 @@
 
   <title><%= $title %></title>
 
-  %#= stylesheet "http://fonts.googleapis.com/css?family=EB+Garamond"
+  %= stylesheet "http://fonts.googleapis.com/css?family=Varela+Round|Roboto+Condensed"
   %= stylesheet "/css/4edc2013.min.css"
   %= stylesheet "/lib/fa/css/font-awesome.min.css"
   %= stylesheet "/css/main.css"
+  %= stylesheet "/css/4edc2013-extra.css"
   %== content_for "styles";
 
-  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  %= javascript "/lib/html5shiv.js";
-  <!-- XXX: respond.min.js must not be cross domain -->
+  %= javascript "/lib/modernizr.js";
+  <!-- Respond.js IE8 support of media queries -->
   %= javascript "/lib/respond.min.js";
 </head>
 <body>
@@ -29,10 +29,27 @@
 
   %== include "widgets/footer";
 
-  <!-- Placed at the end of the document so the pages load faster -->
-  %= javascript "/lib/jquery.js";
-  %= javascript "/lib/bs/dist/js/bootstrap.min.js";
-  %= javascript "/lib/holder.js";
-  %= content_for "scripts";
+<!-- Placed at the end of the document so the pages load faster -->
+%= javascript "/lib/jquery.js";
+%= javascript "/lib/bs/dist/js/bootstrap.min.js";
+%= javascript "/lib/holder.js";
+%= javascript begin
+// reload icons, should be just for IE8...
+// from: http://stackoverflow.com/questions/9809351/ie8-css-font-face-fonts-only-working-for-before-content-on-over-and-sometimes/10557782#10557782
+window.load = function() {
+	'use strict';
+
+	var head = document.getElementsByTagName('head')[0];
+	var style = document.createElement('style');
+
+	style.type = 'text/css';
+	style.styleSheet.cssText = ':before,:after{content:none !important;}';
+	head.appendChild(style);
+	setTimeout(function(){
+	        head.removeChild(style);
+		}, 0);
+};
+% end
+%= content_for "scripts";
 </body>
 </html>

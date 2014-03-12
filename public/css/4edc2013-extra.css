@@ -1,0 +1,47 @@
+body {
+	background-image: url("/img/4edc2013/HD-Space-Wallpapers.jpg");
+	background-repeat: no-repeat;
+	background-position: top;
+}
+
+
+.no-fold,
+.row-content {
+	padding: 15px;
+}
+
+.no-fold .row-content,
+.no-fold .well {
+	background-color: rgb(0, 0, 0); /* fallback */
+	background-color: rgba(0, 0, 0, 0.2);
+}
+
+/* ie */
+.no-rgba .no-fold .row,
+.no-rgba .no-fold .well {
+        background: transparent;
+        zoom: 1; /* reflow */
+        /* For IE 5.5 - 7*/
+        filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#19000000, endColorstr=#19000000);
+        /* For IE 8*/
+        -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#19000000, endColorstr=#19000000)";
+}
+
+
+h1, .h1,
+h2, .h2,
+h3, .h3 {
+	color: #7CD2EC;
+	font-family: "Roboto Condensed", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+h1, .h1,
+h2, .h2 {
+	text-align: center;
+	/* from: http://mothereffingtextshadow.com/ */
+	text-shadow: hsl(213,50%,49%) -1px 1px, hsl(213,50%,49%) -2px 2px;
+}
+
+legend {
+	color: inherit;
+}

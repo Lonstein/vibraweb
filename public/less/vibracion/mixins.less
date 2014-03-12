@@ -1,15 +1,14 @@
 // mixins aggregates, these don't actually override but are aggregated
 // to previous mixins if they have same name and params
 
-// invert colors on primary buttons
 .button-primary (@color; @background; @border) {
   &:hover,
   &:focus,
   &:active,
   &.active,
   .open .dropdown-toggle& {
-    color: @color;
-    background-color: negation(@background, #fff);
+    color: @background;
+    background-color: @color;
         border-color: @border, 12%;
   }
 }

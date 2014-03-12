@@ -1,22 +1,51 @@
 % title "4EDC2013";
 % layout "4edc2013";
 
-% my $mk = begin
-<div id="convocatoria" markdown="1" class="jumbotron text-center">
-#### El Colectivo Vibración convoca al público en general a participar en su:
-## 4to encuentro de creadores 2013:
-#El disenso
-</div><!-- .jumbotron -->
+% content_for styles => begin
+% end
 
+<div class="row fold">
+  <div class="col-sm-12 text-center">
+    <p class="h4">El Colectivo Vibración convoca al público en general a participar
+    en su:</p>
+    <p class="h2">4to encuentro de creadores 2013:</p>
+    <h1 class="sr-only">Del disenso</h1><!-- SEO -->
+    <div class="row">
+      <div class="col-sm-12">
+        <img src="/img/4edc2013/deldisenso.png" alt="DEL DISENSO LOGO" class="img-responsive">
+      </div>
+    </div><!--.row-->
+  </div><!--.col-sm-12-->
+</div><!--.row-->
+
+
+<div class="no-fold">
+<div class="row convocatoria">
+  <div class="col-sm-12">
+    <div class="row-header">
+      <h2>Convocatoria</h2>
+    </div>
+    <div class="row-content">
+      %== markdown begin
 Este es un festival artístico interdisciplinario sin fin de lucro que permite
 exponer intervenciones de las siguientes áreas: **artes visuales**,
-	**literatura**, **música**, **teatro**, **perfomance** e
-	**interdisciplinarias**. Se llevará a cabo en
+**literatura**, **música**, **teatro**, **perfomance** e
+**interdisciplinarias**. Se llevará a cabo en
 distintas sedes de la zona metropolitana de la ciudad de Monterrey, Nuevo León,
 México; iniciando exposiciones el día *29 de noviembre del 2013* y finalizando
 el día *14 de diciembre*.
+      % end
+    </div><!-- .row-content -->
+  </div><!-- .col-sm-12 -->
+</div><!-- .row -->
 
-# Bases generales
+<div class="row bases-generales">
+  <div class="col-sm-12">
+    <div class="row-header">
+      <h2>Bases generales</h2>
+    </div>
+    <div class="row-content">
+%== markdown begin
 
 Las obras podrán ser referentes al tema del festival: *El disenso* o de tema libre.
 
@@ -35,9 +64,19 @@ No es requisito presentar obras inéditas, tampoco es requisito ser autor del ma
 Llenar la hoja de solicitud y enviar la documentación al correo del área disciplinaria de la obra a presentar (ver más abajo).
 
 Este es un festival sin fin de lucro, por lo que no hay premiación de ningún tipo para los autores cuyas obras sean aceptadas, sin embargo se les entregará un reconocimiento por su participación en el festival.
+% end
+    </div><!-- .row-content -->
+  </div><!-- .col-sm-12 -->
+</div><!-- .row -->
 
-## Bases específicas
+<div class="row">
+    <h2>Bases específicas</h2>
+</div> <!-- .row -->
 
+<div class="row">
+  <div class="col-sm-6">
+    <div class="bases-visuales">
+%== markdown begin
 ###Del área de artes visuales
 
 Se aceptarán los siguientes tipos de obras:
@@ -46,6 +85,13 @@ Se aceptarán los siguientes tipos de obras:
 * Multimedia.
 * Video.
 
+% end
+    </div><!-- .bases-visuales -->
+  </div><!-- .col-sm-6 -->
+
+  <div class="col-sm-6">
+    <div class="bases-letras">
+%== markdown begin
 ###Del área de literatura
 
 Se aceptarán los siguientes tipos de obras:
@@ -57,6 +103,16 @@ Se aceptarán los siguientes tipos de obras:
 
 El tiempo de lectura por persona no deberá exceder los 10 minutos para permitir la intervención del mayor número de participantes.
 
+% end
+    </div><!-- .bases-letras --->
+  </div><!-- .col-sm-6 -->
+</div><!-- .row -->
+
+<div class="row">
+
+  <div class="col-sm-6">
+    <div class="bases-musica">
+%== markdown begin
 ###Del área de música
 
 Se aceptarán los siguientes tipos de obras:
@@ -66,6 +122,13 @@ Se aceptarán los siguientes tipos de obras:
 * Jam callejero: concierto dirigido a músicos que gusten de la improvisación.
 * Espacio libre: concierto dirigido a músicos de cualquier genero e instrumentación.
 
+% end
+    </div><!-- .bases-musica -->
+  </div><!-- .col-sm-6 -->
+
+  <div class="col-sm-6">
+    <div class="bases-teatro">
+%== markdown begin
 ###Del área de teatro
 
 Se aceptarán los siguientes tipos de obras:
@@ -74,6 +137,16 @@ Se aceptarán los siguientes tipos de obras:
 * Fragmentos de obra.
 * Teatro - Performance.
 
+% end
+    </div><!-- .bases-teatro -->
+  </div><!-- .col-sm-6 -->
+
+</div><!-- .row -->
+
+<div class="row">
+  <div class="col-sm-6">
+    <div class="bases-perfo">
+%== markdown begin
 ###Del área de perfomance
 
 Se aceptarán los siguientes tipos de obras:
@@ -89,6 +162,13 @@ público.
 
 Se puede interactuar con el publico pero no agredirlo.
 
+% end
+    </div><!-- .bases-perfo -->
+  </div><!-- .col-sm-6 -->
+
+  <div class="col-sm-6">
+    <div class="bases-inter">
+%== markdown begin
 ###Del área de interdisciplina
 
 Se aceptarán los siguientes tipos de obras:
@@ -100,11 +180,9 @@ cada disciplina.
 
 Para mayores informes y dudas se podrá escribir un correo electrónico a: general@colectivovibracion.org
 % end
-
-<div class="row">
-  <div class="col-sm-12">
-    %== markdown($mk->()->to_string)
-  </div><!-- .col-sm-12 -->
+    </div><!-- .bases-inter -->
+  </div><!-- .col-sm-6 -->
 </div><!-- .row -->
 
 %= include "registro"
+</div><!-- .no-fold -->
